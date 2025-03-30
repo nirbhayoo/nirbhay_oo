@@ -26,7 +26,12 @@ body {
     background: #222;
     color: white;
 }
-
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff9500;  /* Orange color */
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3);
+}
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
