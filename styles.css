@@ -1,64 +1,101 @@
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #046473;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #e6f2f2;
+  color: #000;
+  transition: background 0.3s;
+}
+
+body.dark {
+  background-color: #1d1d1d;
+  color: #fff;
 }
 
 .calculator {
-    width: 350px;
-    background: #6c6f7a;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  max-width: 400px; /* Adjust max-width if needed for 4 columns */
+  margin: 20px auto;
+  padding: 20px;
+  background: #6c6f7a;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
-#display {
-    width: 100%;
-    height: 60px;
-    text-align: right;
-    font-size: 1.8em;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: none;
-    background: #111111;
-    color: rgb(248, 243, 243);
+.theme-toggle {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#resultDisplay {
+  background: #111;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+#smallDisplay {
+  font-size: 0.8em;
+  opacity: 0.7;
+  text-align: right;
+}
+
+#mainDisplay {
+  width: 100%;
+  font-size: 1.6em;
+  border: none;
+  background: none;
+  color: white;
+  text-align: right;
+  outline: none;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+#angleMode {
+  cursor: pointer;
+  font-weight: bold;
+  color: yellow;
+}
+
+.memory-buttons button {
+  padding: 5px;
+  margin: 2px;
 }
 
 .buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Changed to 4 columns */
+  gap: 8px;
 }
 
 button {
-    width: 100%;
-    padding: 15px;
-    font-size: 1.2em;
-    border: none;
-    cursor: pointer;
-    background: #555;
-    color: white;
-    border-radius: 5px;
+  padding: 15px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 button:hover {
-    background: #777;
+  background-color: #999;
 }
 
-button:nth-child(4n), button:nth-child(17) {
-    background: #ff9500;
-    color: white;
+.history {
+  margin-top: 20px;
+  background: #444;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
 }
+
 footer {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 16px;
-    color: rgb(247, 251, 3);
-    font-weight: bold;
-    text-align: center;
+  text-align: center;
+  padding: 10px;
+  color: yellow;
 }
