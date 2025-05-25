@@ -1,51 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Scientific Calculator</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="calculator">
-        <input type="text" id="display" disabled>
-        <div class="buttons">
-            <button onclick="clearDisplay()">C</button>
-            <button onclick="deleteLast()">DEL</button>
-            <button onclick="appendValue('%')">%</button>
-            <button onclick="appendValue('/')">/</button>
-            
-            <button onclick="appendValue('7')">7</button>
-            <button onclick="appendValue('8')">8</button>
-            <button onclick="appendValue('9')">9</button>
-            <button onclick="appendValue('*')"></button>
+  <div class="theme-toggle">
+    <label>
+      <input type="checkbox" id="themeSwitch" onchange="toggleTheme()">
+      Dark Mode
+    </label>
+  </div>
 
-            <button onclick="appendValue('4')">4</button>
-            <button onclick="appendValue('5')">5</button>
-            <button onclick="appendValue('6')">6</button>
-            <button onclick="appendValue('-')">-</button>
-
-            <button onclick="appendValue('1')">1</button>
-            <button onclick="appendValue('2')">2</button>
-            <button onclick="appendValue('3')">3</button>
-            <button onclick="appendValue('+')">+</button>
-
-            <button onclick="appendValue('0')">0</button>
-            <button onclick="appendValue('.')">.</button>
-            <button onclick="calculateResult()">=</button>
-
-            <!-- Scientific Functions -->
-            <button onclick="appendValue('Math.sin(')">sin</button>
-            <button onclick="appendValue('Math.cos(')">cos</button>
-            <button onclick="appendValue('Math.tan(')">tan</button>
-            <button onclick="appendValue('Math.log10(')">log</button>
-            <button onclick="appendValue('Math.sqrt(')">√</button>
-            <button onclick="appendValue('Math.pow(')">x^y</button>
-        </div>
+  <div class="calculator">
+    <div id="resultDisplay">
+      <div id="smallDisplay"></div>
+      <input type="text" id="mainDisplay" disabled />
     </div>
-   <footer>
-        Created By Nirbhay_oo
-    </footer>
-    <script src="script.js"></script>
+
+    <div class="top-bar">
+      <span id="angleMode" onclick="toggleAngleMode()">DEG</span>
+      <div class="memory-buttons">
+        <button onclick="memoryClear()">MC</button>
+        <button onclick="memoryRecall()">MR</button>
+        <button onclick="memoryAdd()">M+</button>
+        <button onclick="memorySubtract()">M-</button>
+      </div>
+    </div>
+
+    <div class="buttons" id="buttons">
+      <!-- Buttons added dynamically by JS -->
+    </div>
+    
+    <div class="history" id="history">
+      <h3>History</h3>
+      <ul id="historyList"></ul>
+    </div>
+  </div>
+
+  <footer>Created by Nirbhay_oo</footer>
+  <script src="script.js"></script>
 </body>
 </html>
